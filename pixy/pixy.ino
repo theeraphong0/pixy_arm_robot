@@ -51,30 +51,6 @@ void loop() {
   {
     gotozero();
   }
-
-  if (Serial.available() > 0)
-  {
-    String text = Serial.readStringUntil("\n");
-    Serial.println(text);
-    int ch = text.substring(0, 1).toInt();
-    int value = text.substring(1, text.length()).toInt();
-    switch (ch) {
-      case 0:
-        servo0.write(value);
-        break;
-      case 1:
-        servo1.write(value);
-        break;
-      case 2:
-        servo2.write(value);
-        break;
-      case 3:
-        servo3.write(value);
-        break;
-      default:
-        break;
-    }
-  }
 }
 void signatureOnRight()
 {
